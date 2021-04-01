@@ -118,10 +118,21 @@ lcd_h = lcdInit(2, 16, 4, RS, EN, D0, D1, D2, D3, D0, D1, D2, D3);
 
 lcdPosition(lcd_h, 0,0);
 //g8563_Store[5], g8563_Store[4], g8563_Store[3]
-lcdPutchar(lcd_h, '0'+g8563_Store[0]);
+lcdPutchar(lcd_h, 'Y');
+lcdPutchar(lcd_h, '0'+g8563_Store[5]);
+lcdPutchar(lcd_h, 'M');
+lcdPutchar(lcd_h, '0'+g8563_Store[4]);
+lcdPutchar(lcd_h, 'D');
+lcdPutchar(lcd_h, '0'+g8563_Store[3]);
+
 lcdPosition(lcd_h, 0,1);
 //g8563_Store[2], g8563_Store[1], g8563_Store[0]
+lcdPutchar(lcd_h, 'H');
 lcdPutchar(lcd_h, '0'+g8563_Store[2]);
+lcdPutchar(lcd_h, 'M');
+lcdPutchar(lcd_h, '0'+g8563_Store[1]);
+lcdPutchar(lcd_h, 'S');
+lcdPutchar(lcd_h, '0'+g8563_Store[0]);
  bcm2835_delay(5000); 
 lcdClear(lcd_h);
 } 
