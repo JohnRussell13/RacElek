@@ -118,6 +118,9 @@ lcd_h = lcdInit(2, 16, 4, RS, EN, D0, D1, D2, D3, D0, D1, D2, D3);
 g8563_Store[2], g8563_Store[1], 
 g8563_Store[0], g8563_Store[5], g8563_Store[4], g8563_Store[3]);
 
+ printf("Sati:%d\n", g8563_Store[2]);
+ printf("Sati:%c\n", (char)g8563_Store[2]);
+
 lcdPosition(lcd_h, 0,0);
 //g8563_Store[5], g8563_Store[4], g8563_Store[3]
 lcdPrintf(lcd_h,"AaA");
