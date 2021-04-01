@@ -114,7 +114,7 @@ lcd_h = lcdInit(2, 16, 4, RS, EN, D0, D1, D2, D3, D0, D1, D2, D3);
  while(1) 
  { 
  P8563_Readtime();
- printf("Sati:%c\n", 0+(char)g8563_Store[2]);
+ printf("Sati:%c\n", '0'+(char)g8563_Store[2]);
 
 lcdPosition(lcd_h, 0,0);
 //g8563_Store[5], g8563_Store[4], g8563_Store[3]
