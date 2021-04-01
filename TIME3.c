@@ -116,9 +116,11 @@ lcd_h = lcdInit(2, 16, 4, RS, EN, D0, D1, D2, D3, D0, D1, D2, D3);
  P8563_Readtime();
 
 lcdPosition(lcd_h, 0,0);
-lcdPrintf(lcd_h,"Y%d M% D%", g8563_Store[5], g8563_Store[4], g8563_Store[3]);
+//g8563_Store[5], g8563_Store[4], g8563_Store[3]
+lcdPrintf(lcd_h,(char)g8563_Store[5]);
 lcdPosition(lcd_h, 0,1);
-lcdPrintf(lcd_h,"H%d M% S%", g8563_Store[2], g8563_Store[1], g8563_Store[0]);
+//g8563_Store[2], g8563_Store[1], g8563_Store[0]
+lcdPrintf(lcd_h,g8563_Store[2]);
 lcdClear(lcd_h);
  bcm2835_delay(5000); 
 } 
