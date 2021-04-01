@@ -16,12 +16,10 @@ const int D3 = 6;
 int main(){
 int lcd_h;
 if (wiringPiSetup() < 0){
- fprintf (stderr, "Greška pri inicijalizaciji: 
-%s\n", strerror (errno)) ;
+ fprintf (stderr, "Greška pri inicijalizaciji: %s\n", strerror (errno)) ;
  return 1 ;
 }
-lcd_h = lcdInit(2, 16, 4, RS, EN, D0, D1, D2, 
-D3, D0, D1, D2, D3);
+lcd_h = lcdInit(2, 16, 4, RS, EN, D0, D1, D2, D3, D0, D1, D2, D3);
 lcdPosition(lcd_h, 0,0);
 lcdPrintf(lcd_h,"Displej sa 16 ch");
 lcdPosition(lcd_h, 0,1);
