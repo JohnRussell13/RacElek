@@ -33,13 +33,13 @@ bcm2835_i2c_write(WriteBuf,2);
  bcm2835_i2c_write(WriteBuf,2); 
 
  WriteBuf[0] = DAN;
- WriteBuf[1] = g8563_Store[2]; 
+ WriteBuf[1] = g8563_Store[3]; 
  bcm2835_i2c_write(WriteBuf,2); 
  WriteBuf[0] = MES; 
- WriteBuf[1] = g8563_Store[2]; 
+ WriteBuf[1] = g8563_Store[4]; 
  bcm2835_i2c_write(WriteBuf,2); 
  WriteBuf[0] = GOD; 
- WriteBuf[1] = g8563_Store[2]; 
+ WriteBuf[1] = g8563_Store[5]; 
  bcm2835_i2c_write(WriteBuf,2); 
 }
 void P8563_init() 
@@ -66,8 +66,8 @@ void P8563_Readtime()
  g8563_Store[1] = time[1] & 0x7f; 
  g8563_Store[2] = time[2] & 0x3f; 
  g8563_Store[3] = time[3] & 0x3f; 
- g8563_Store[4] = time[4] & 0x1f; 
- g8563_Store[5] = time[5] & 0xff; 
+ g8563_Store[4] = time[5] & 0x1f; 
+ g8563_Store[5] = time[6] & 0xff; 
  
  g8563_Store[0] = changeHexToInt(g8563_Store[0]);
  g8563_Store[1] = changeHexToInt(g8563_Store[1]);
@@ -91,7 +91,7 @@ if (!bcm2835_init())
  while(1) 
  { 
  P8563_Readtime();
- printf("Sati:%d Minuti:%d Sekunde:%d Dalje: %d - %d -%d\n", 
+ printf("Sati:%d Minuti:%d Sekunde:%d Dalje: %d - %d - %d\n", 
 g8563_Store[2], g8563_Store[1], 
 g8563_Store[0], g8563_Store[5], g8563_Store[4], g8563_Store[3]);
  bcm2835_delay(5000); 
