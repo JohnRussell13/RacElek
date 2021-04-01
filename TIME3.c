@@ -117,19 +117,13 @@ lcd_h = lcdInit(2, 16, 4, RS, EN, D0, D1, D2, D3, D0, D1, D2, D3);
 
 lcdPosition(lcd_h, 0,0);
 //g8563_Store[5], g8563_Store[4], g8563_Store[3]
-lcdPutchar(lcd_h,(char)g8563_Store[5]);
+lcdPrintf(lcd_h,"AaA");
 lcdPosition(lcd_h, 0,1);
 //g8563_Store[2], g8563_Store[1], g8563_Store[0]
-lcdPutchar(lcd_h,g8563_Store[2]);
-lcdClear(lcd_h);
+lcdPrintf(lcd_h,"SsS");
  bcm2835_delay(5000); 
-} 
-
-lcdPosition(lcd_h, 0,0);
-lcdPrintf(lcd_h,"Displej sa 16 ch");
-lcdPosition(lcd_h, 0,1);
-lcdPrintf(lcd_h, "u 2 reda");
 lcdClear(lcd_h);
+} 
  
  bcm2835_i2c_end(); 
  bcm2835_close(); 
