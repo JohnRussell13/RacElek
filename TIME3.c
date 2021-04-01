@@ -121,7 +121,7 @@ printf("%d", g8563_Store[0]);
 lcdPrintf(lcd_h,"AaA");
 lcdPosition(lcd_h, 0,1);
 //g8563_Store[2], g8563_Store[1], g8563_Store[0]
-lcdPrintf(lcd_h,"SsS");
+lcdPrintf(lcd_h,"DdD");
  bcm2835_delay(5000); 
 lcdClear(lcd_h);
 } 
