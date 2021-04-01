@@ -117,6 +117,7 @@ lcd_h = lcdInit(2, 16, 4, RS, EN, D0, D1, D2, D3, D0, D1, D2, D3);
 
 lcdPosition(lcd_h, 0,0);
 //g8563_Store[5], g8563_Store[4], g8563_Store[3]
+printf("%d", g8563_Store[0]);
 lcdPrintf(lcd_h,"AaA");
 lcdPosition(lcd_h, 0,1);
 //g8563_Store[2], g8563_Store[1], g8563_Store[0]
